@@ -23,7 +23,7 @@ class TestCreateFavouritePlaceColors:
         place = Place.place_without_color
         response = requests.post(Urls.url_create_place, headers={'Cookie': token}, data=place)
         color = response.json()['color']
-        assert 200 == response.status_code and color == None
+        assert 200 == response.status_code and color is None
 
     @allure.title('Попытка создать избранное место с цветами иконок, отличными от BLUE, GREEN, RED, YELLOW')
     @allure.issue('BUG: Проходит тест с цветом BROWN')
