@@ -16,11 +16,13 @@
 
 ### Директория tests:
 
-1. В файле test_create_favourite_place_colors.py - тесты на проверку различных вариантов цветов иконок для избранных
+1. В файле test_create_place.py - позитивный тест создания избранного места.
+2. В файле test_create_favourite_place_colors.py - тесты на проверку различных вариантов цветов иконок для избранных
    мест.
-2. В файде test_create_favourite_place_lat&lon.py - тесты на проверку параметор долготы и широты.
-3. В файле test_create_favourite_place_titles.py - тесты на проверку различных вариантов загаловков.
-4. В файле test_try_to_create_place_without_token.py - проверки реакции системы на некорректный токен и его отсутсвие.
+3. В файле test_create_favourite_place_lat.py - тесты на проверку параметра широты.
+4. В файле test_create_favourite_place_lon.py - тесты на проверку параметра долготы.
+5. В файле test_create_favourite_place_titles.py - тесты на проверку различных вариантов загаловков.
+6. В файле test_try_to_create_place_without_token.py - проверки реакции системы на некорректный токен и его отсутсвие.
 
 Для проверки эквивалентных тестовых данных используется параметризация.
 

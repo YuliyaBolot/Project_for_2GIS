@@ -94,8 +94,8 @@ class Place:
         },
         {
             "title": punctuation,
-            "lat": 68.864567,
-            "lon": 95.234567
+            "lat": -68.864567,
+            "lon": -95.234567
         },
         {
             "title": "W",
@@ -104,13 +104,13 @@ class Place:
         },
         {
             "title": "ЦБ",
-            "lat": 68.864567,
+            "lat": -68.864567,
             "lon": 95.234567
         },
         {
             "title": "ф" * 999,
             "lat": 68.864567,
-            "lon": 95.234567
+            "lon": -95.234567
         },
         {
             "title": "y" * 998,
@@ -158,14 +158,24 @@ class Place:
         "lon": 'kddls;la;;a7'
     }
 
-    place_with_lat_less_equals_90 = [{
-        "title": "Центральный Park",
+    place_with_lat_less_equals_abs90 = [{
+        "title": "Park",
         "lat": 89.999999,
         "lon": 95.234567
     },
         {
-            "title": "Центральный Park",
+            "title": "Park",
             "lat": 90.0,
+            "lon": 95.234567
+        },
+        {
+            "title": "Park",
+            "lat": -90.0,
+            "lon": 95.234567
+        },
+        {
+            "title": "Park",
+            "lat": -89.999999,
             "lon": 95.234567
         }
     ]
@@ -182,7 +192,19 @@ class Place:
         }
     ]
 
-    place_with_lon_less_equals_180 = [{
+    place_with_lat_more_than_minus_90 = [{
+        "title": "Центральный Park",
+        "lat": -90.00000000000001,
+        "lon": 95.234567
+    },
+        {
+            "title": "Центральный Park",
+            "lat": -90.000000000000001,
+            "lon": 95.234567
+        }
+    ]
+
+    place_with_lon_less_equals_abs180 = [{
         "title": "Центральный Park",
         "lat": 68.864567,
         "lon": 179.999999
@@ -191,6 +213,16 @@ class Place:
             "title": "Центральный Park",
             "lat": 68.864567,
             "lon": 180.0
+        },
+        {
+            "title": "Центральный Park",
+            "lat": 68.864567,
+            "lon": -179.999999
+        },
+        {
+            "title": "Центральный Park",
+            "lat": 68.864567,
+            "lon": -180.0
         }
     ]
 
@@ -206,9 +238,45 @@ class Place:
         }
     ]
 
-    place_with_string_lat_lon = {
+    place_with_lon_more_than_minus_180 = [{
+        "title": "Центральный Park",
+        "lat": 68.864567,
+        "lon": -180.0000000000001
+    },
+        {
+            "title": "Центральный Park",
+            "lat": 68.864567,
+            "lon": -180.00000000000001
+        }
+    ]
+
+    place_with_zero_lat = {
+        "title": "Park",
+        "lat": 0.0,
+        "lon": 95.234567
+    }
+
+    place_with_zero_lon = {
+        "title": "Central Park",
+        "lat": 68.864567,
+        "lon": 0.0
+    }
+
+    place_with_zero_lat_lon = {
+        "title": "Central Park",
+        "lat": 0.0,
+        "lon": 0.0
+    }
+
+    place_with_string_lat = {
         "title": "Центральный Park",
         "lat": '68.864567',
+        "lon": 95.234567
+    }
+
+    place_with_string_lon = {
+        "title": "Центральный Park",
+        "lat": 68.864567,
         "lon": '95.234567'
     }
 
@@ -218,9 +286,11 @@ class Message:
     message_required_lat = "Параметр 'lat' является обязательным"
     message_lat_is_number = "Параметр 'lat' должен быть числом"
     message_lat_less_equals_90 = "Параметр 'lat' должен быть не более 90"
+    message_lat_less_equals_minus_90 = "Параметр 'lat' должен быть не менее -90"
     message_required_lon = "Параметр 'lon' является обязательным"
     message_lon_is_number = "Параметр 'lon' должен быть числом"
     message_lon_less_equals_180 = "Параметр 'lon' должен быть не более 180"
+    message_lon_less_equals_minus_180 = "Параметр 'lon' должен быть не менее -180"
     message_token_is_required = "Параметр 'token' является обязательным"
     message_wrong_invalid_token = "Передан несуществующий или «протухший» 'token'"
     message_title_is_required = "Параметр 'title' является обзательным"
